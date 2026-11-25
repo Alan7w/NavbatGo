@@ -1,0 +1,11 @@
+{
+  "name": "navbatgo",
+  "private": true,
+  "description": "Telegram duty-rotation bot running on Cloudflare Workers",
+  "type": "module",
+  "scripts": {
+    "test": "node --no-warnings --test tests/*.test.mjs",
+    "deploy": "wrangler deploy"
+  },
+  "engines": { "node": ">=22.13" }
+}

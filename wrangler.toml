@@ -1,0 +1,19 @@
+# Cloudflare Worker configuration. GitHub Actions deploys this on every push to main.
+name = "duty-bot"
+main = "src/index.js"
+compatibility_date = "2025-11-01"
+workers_dev = true
+
+# Runs every minute; the code decides when each group's reminder is due.
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "duty-bot-db"
+database_id = "fdfca75e-bcfb-4ac7-90e9-ef86b47e4229"
+
+[observability]
+enabled = true
+
+# The bot token is a secret stored in Cloudflare (BOT_TOKEN), never in this repo.
